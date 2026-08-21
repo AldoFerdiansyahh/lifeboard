@@ -3,8 +3,10 @@
   "start_url":"./","scope":"./","display":"standalone","orientation":"portrait-primary",
   "theme_color":"#2563eb","background_color":"#f4f7fc","lang":"en-US",
   "icons":[
-    {"src":"assets/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"assets/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {"src":"assets/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"assets/icons/icon-maskable-192.png","sizes":"192x192","type":"image/png","purpose":"maskable"},
+    {"src":"assets/icons/icon-maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
   ],
   "shortcuts":[{"name":"Tambah task","url":"./#/tasks?action=new","icons":[{"src":"assets/icons/icon-192.png","sizes":"192x192"}]},{"name":"Tambah transaksi","url":"./#/money?action=new","icons":[{"src":"assets/icons/icon-192.png","sizes":"192x192"}]}]
 }
