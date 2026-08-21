@@ -1,0 +1,16 @@
+export const $=(s,r=document)=>r.querySelector(s);export const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+export const uid=()=>crypto.randomUUID?.()||`${Date.now()}-${Math.random().toString(16).slice(2)}`;
+export const todayISO=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+export const nowISO=()=>new Date().toISOString();
+export const escapeHTML=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+export const formatCurrency=(n,c='IDR')=>new Intl.NumberFormat('id-ID',{style:'currency',currency:c,maximumFractionDigits:0}).format(Number(n)||0);
+export const formatDate=(v,o={})=>v?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'long',year:'numeric',...o}).format(new Date(`${v}T00:00:00`)):'';
+export const formatShortDate=v=>v?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'short'}).format(new Date(`${v}T00:00:00`)):'';
+export const formatTime=v=>v?String(v).replace(':','.') : '';
+export const getGreeting=(d=new Date())=>d.getHours()<12?'Good morning':d.getHours()<18?'Good afternoon':'Good evening';
+export const debounce=(fn,ms=250)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms)}};
+export const localDate=(d=new Date())=>{const x=new Date(d);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10)};
+export const daysBetween=(a,b)=>Math.round((new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/86400000);
+export const monthKey=v=>String(v||'').slice(0,7);
+export const download=(name,text)=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'application/json'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+export const isTyping=e=>['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.target.isContentEditable;

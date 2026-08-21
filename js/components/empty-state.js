@@ -1,0 +1,1 @@
+export const renderEmptyState=(message,actionLabel='')=>`<div class="empty"><span class="empty-icon">○</span><p>${message}</p>${actionLabel?`<button class="button secondary" data-empty-action>${actionLabel}</button>`:''}</div>`;
