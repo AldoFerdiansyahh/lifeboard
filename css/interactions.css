@@ -1,0 +1,12 @@
+.nav-link,.icon-button,.button,.list-item,.quick-action,.card{transition:transform var(--ease),background-color var(--ease),border-color var(--ease),box-shadow var(--ease),color var(--ease),filter var(--ease)}
+.nav-link:active,.button:active,.quick-action:active{transform:scale(.97)}
+.icon-button:active{transform:scale(.92)}
+.icon-button:hover{border-color:var(--primary);background:var(--primary-soft)}
+.button:hover{filter:brightness(1.06);box-shadow:0 6px 16px color-mix(in srgb,var(--primary) 20%,transparent)}
+.quick-action:hover{background:var(--primary-soft);border-color:var(--primary);transform:translateY(-2px)}
+.progress span{transition:width .45s ease}
+.modal-backdrop{animation:fade-in .16s ease-out}.modal{animation:modal-in .2s ease-out}
+@keyframes fade-in{from{opacity:0}}
+@keyframes modal-in{from{opacity:0;transform:translateY(16px) scale(.99)}}
+@media(hover:hover){.card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--primary) 24%,var(--border));box-shadow:var(--shadow)}.list-item:hover{transform:translateX(2px);background:color-mix(in srgb,var(--surface) 86%,var(--primary-soft));border-color:color-mix(in srgb,var(--primary) 20%,var(--border))}}
+@media(prefers-reduced-motion:reduce){.modal-backdrop,.modal{animation:none}}

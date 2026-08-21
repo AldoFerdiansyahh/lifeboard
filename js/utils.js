@@ -4,8 +4,8 @@ export const todayISO=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getT
 export const nowISO=()=>new Date().toISOString();
 export const escapeHTML=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 export const formatCurrency=(n,c='IDR')=>new Intl.NumberFormat('id-ID',{style:'currency',currency:c,maximumFractionDigits:0}).format(Number(n)||0);
-export const formatDate=(v,o={})=>v?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'long',year:'numeric',...o}).format(new Date(`${v}T00:00:00`)):'';
-export const formatShortDate=v=>v?new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'short'}).format(new Date(`${v}T00:00:00`)):'';
+export const formatDate=(v,o={})=>v?new Intl.DateTimeFormat('en-US',{day:'numeric',month:'long',year:'numeric',...o}).format(new Date(`${v}T00:00:00`)):'';
+export const formatShortDate=v=>v?new Intl.DateTimeFormat('en-US',{day:'numeric',month:'short'}).format(new Date(`${v}T00:00:00`)):'';
 export const formatTime=v=>v?String(v).replace(':','.') : '';
 export const getGreeting=(d=new Date())=>d.getHours()<12?'Good morning':d.getHours()<18?'Good afternoon':'Good evening';
 export const debounce=(fn,ms=250)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms)}};
